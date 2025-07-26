@@ -1,0 +1,9 @@
+2025-07-13 18:15:12,810 - psichat - INFO - info:108 - [API] Request iniciada | Data: {"method": "GET", "url": "http://localhost:8000/auth/me", "client_ip": "127.0.0.1", "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}
+2025-07-13 18:15:12,827 - psichat - INFO - info:108 - [DB] DB Operation: get_user | Data: {"args": "(<sqlalchemy.orm.session.Session object at 0x0000026DF7062410>, 3)", "kwargs": "{}"}
+2025-07-13 18:15:12,861 - psichat - ERROR - error:122 - Error procesando mensaje para usuario 1: 1012
+2025-07-13 18:15:13,063 - psichat - INFO - info:108 - [DB] DB Operation: get_user completed successfully
+2025-07-13 18:15:13,080 - psichat - ERROR - error:122 - Error procesando mensaje para usuario 1: Cannot call "receive" once a disconnect message has been received.
+2025-07-13 18:15:13,097 - psichat - INFO - info:108 - Usuario 1 desconectado del WebSocket
+2025-07-13 18:15:13,114 - psichat - INFO - info:108 - [API] Request completada | Data: {"method": "GET", "url": "http://localhost:8000/auth/me", "status_code": 200, "duration_ms": 303.87}
+2025-07-13 18:15:13,128 - performance - INFO - info:108 - Request Performance | Data: {"endpoint": "/auth/me", "method": "GET", "duration_ms": 303.87, "status_code": 200}
+2025-07-13 18:15:13,367 - psichat - INFO - info:108 - Cerrando PsiChat Backend...
