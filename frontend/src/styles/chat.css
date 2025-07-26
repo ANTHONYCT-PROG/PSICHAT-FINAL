@@ -1,0 +1,267 @@
+/* Estilos personalizados para el chat */
+
+/* Animaciones personalizadas */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+/* Estilos para mensajes */
+.message-bubble {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.message-bubble.user {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.message-bubble.tutor {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  color: #1f2937;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para indicadores de escritura */
+.typing-indicator {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.typing-dot {
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+/* Estilos para el input */
+.chat-input {
+  transition: all 0.3s ease;
+}
+
+.chat-input:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+}
+
+/* Estilos para botones */
+.chat-button {
+  transition: all 0.2s ease;
+}
+
+.chat-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chat-button:active {
+  transform: translateY(0);
+}
+
+/* Estilos para el scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Estilos para estados de mensaje */
+.message-status {
+  transition: all 0.3s ease;
+}
+
+.message-status.sending {
+  animation: pulse 1.5s infinite;
+}
+
+/* Estilos para análisis emocional */
+.emotion-analysis {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.emotion-bar {
+  transition: width 0.8s ease-out;
+}
+
+/* Estilos para sugerencias */
+.quick-reply {
+  transition: all 0.2s ease;
+}
+
+.quick-reply:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para el header */
+.chat-header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Estilos para el panel de información */
+.info-panel {
+  animation: slideInUp 0.4s ease-out;
+}
+
+/* Estilos para emojis */
+.emoji-picker {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.emoji-button {
+  transition: all 0.2s ease;
+}
+
+.emoji-button:hover {
+  transform: scale(1.2);
+  background-color: #f3f4f6;
+}
+
+/* Estilos para grabación de voz */
+.recording-button {
+  transition: all 0.3s ease;
+}
+
+.recording-button.recording {
+  animation: pulse 1s infinite;
+}
+
+/* Estilos para archivos adjuntos */
+.attachment-menu {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Estilos para el historial de sesiones */
+.session-history {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.session-card {
+  transition: all 0.2s ease;
+}
+
+.session-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para notificaciones */
+.notification {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* Estilos para el estado de conexión */
+.connection-status {
+  transition: all 0.3s ease;
+}
+
+.connection-status.connected {
+  animation: pulse 2s infinite;
+}
+
+/* Estilos para el modo oscuro (futuro) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  }
+  
+  .dark-mode .message-bubble.tutor {
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+    color: #f9fafb;
+  }
+  
+  .dark-mode .chat-input {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .message-bubble {
+    max-width: 85%;
+  }
+  
+  .chat-input {
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+  
+  .emoji-picker {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Estilos para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Estilos para focus visible */
+.chat-button:focus-visible,
+.chat-input:focus-visible,
+.emoji-button:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+} 
